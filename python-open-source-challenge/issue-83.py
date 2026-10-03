@@ -17,7 +17,7 @@ def account_totals(transactions):
         amount = transaction["amount"]
         # TODO: Check which transaction type increases the deposit total.
         if transaction["type"] == "deposit":
-            deposits -= amount
+            deposits += amount
         elif transaction["type"] == "withdrawal":
             # TODO: Check how withdrawals are accumulated.
             withdrawals += amount
