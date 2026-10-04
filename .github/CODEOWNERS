@@ -1,0 +1,29 @@
+# Who reviews what.
+#
+# GitHub requests a review from these people automatically when a pull request
+# touches a path they own. Code-owner review is REQUIRED on this repository, so
+# one of the names on the matching line has to approve before anything merges.
+#
+# Maintainer for the 90 Python challenge files: @Prashansure
+#
+# @pushpam2404 is on every line on purpose:
+#   - GitHub does not let anybody approve their own pull request, so a line
+#     naming one person would deadlock the moment that person opened one
+#   - if the maintainer is unavailable, nothing has to wait for them
+#
+# The last matching line wins, so the more specific rules are at the bottom.
+
+# Everything, by default
+*                       @Prashansure @pushpam2404
+
+# The challenge files themselves — the bulk of the contributions
+/python-open-source-challenge/   @Prashansure @pushpam2404
+
+# Automation and the contribution rules. These decide what the checks are, so a
+# pull request must not be able to change them with only its own author's
+# approval.
+/.github/               @pushpam2404
+/CONTRIBUTING.md        @pushpam2404
+/CODE_OF_CONDUCT.md     @pushpam2404
+/SECURITY.md            @pushpam2404
+/LICENSE                @pushpam2404
