@@ -17,10 +17,10 @@ def department_performance(employees):
         department = employee["department"]
         salary = employee["salary"]
         # TODO: Check how salary totals are accumulated by department.
-        salary_totals[department] = salary_totals.get(department, 0) - salary
+        salary_totals[department] = salary_totals.get(department, 0) + salary
         counts[department] = counts.get(department, 0) + 1
         # TODO: Check which performance score should replace the current leader.
-        if department not in top_by_dept or employee["performance_score"] < top_by_dept[department]["performance_score"]:
+        if department not in top_by_dept or employee["performance_score"] > top_by_dept[department]["performance_score"]:
             top_by_dept[department] = employee
     averages = {dept: total / counts[dept] for dept, total in salary_totals.items()}
     # TODO: Check that the top employee record has the expected shape.
