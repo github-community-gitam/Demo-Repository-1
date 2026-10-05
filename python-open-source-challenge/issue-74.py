@@ -23,7 +23,7 @@ def attendance_report(records, minimum_percent):
             present[student] = present.get(student, 0) + 1
     percentages = {student: present.get(student, 0) / total * 100 for student, total in counted.items()}
     # TODO: Check which students fall below the requested threshold.
-    below = [student for student, percent in percentages.items() if percent > minimum_percent]
+    below = [student for student, percent in percentages.items() if percent < minimum_percent]
     # TODO: Check that percentages for all students are returned.
     return percentages, below
 
