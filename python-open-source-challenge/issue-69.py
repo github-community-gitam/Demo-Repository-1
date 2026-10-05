@@ -17,7 +17,7 @@ def category_inventory_value(categories):
         value = 0
         for product in products:
             # TODO: Check how product quantity and price determine its value.
-            value += product["price"] + product["quantity"]
+            value += product["price"] * product["quantity"]
         totals[category] = value
     # TODO: Check that empty categories remain in the result.
     return totals
