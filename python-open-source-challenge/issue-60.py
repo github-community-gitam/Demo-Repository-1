@@ -16,7 +16,7 @@ def expense_totals(expenses):
     for expense in expenses:
         category = expense["category"]
         # TODO: Check how each expense amount changes its category total.
-        totals[category] = totals.get(category, 0) - expense["amount"]
+        totals[category] = totals.get(category, 0) + expense["amount"]
     # TODO: Check that each category is represented once.
     return totals
 
