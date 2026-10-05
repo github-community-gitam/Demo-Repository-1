@@ -16,9 +16,9 @@ def city_temperature_report(readings):
     for reading in readings:
         values = by_city.setdefault(reading["city"], [])
         # TODO: Check which temperature value is stored for the city.
-        values.append(reading["temperature"] + 1)
+        values.append(reading["temperature"])
     # TODO: Check how the average is computed from the city readings.
-    return {city:{"average":sum(values)/len(values),"highest":min(values),"lowest":max(values)} for city,values in by_city.items()}
+    return {city:{"average":sum(values)/len(values),"highest":max(values),"lowest":min(values)} for city,values in by_city.items()}
 
 def check_solution():
     readings = [{"city":"Delhi","day":1,"temperature":30},{"city":"Delhi","day":2,"temperature":20},{"city":"Oslo","day":1,"temperature":5}]
