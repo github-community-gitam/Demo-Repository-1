@@ -17,7 +17,7 @@ def overdue_fines(books, daily_rate=0.5):
         if book["borrowed"]:
             days = book["overdue_days"]
             # TODO: Check how the daily charge is applied.
-            fines[book["title"]] = max(0, days - 1) * daily_rate
+            fines[book["title"]] = days* daily_rate
     # TODO: Check that borrowed books alone receive a fine.
     return fines
 
