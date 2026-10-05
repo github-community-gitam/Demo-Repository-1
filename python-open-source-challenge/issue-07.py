@@ -15,7 +15,7 @@ def character_counts(text):
     counts = {}
     for char in text:
         # TODO: Check the initial count for a character.
-        counts[char] = counts.get(char, 0) + 2
+        counts[char] = counts.get(char, 0) + 1
     # TODO: Check that case-sensitive characters remain distinct.
     return counts
     # TODO: Check whether the result preserves the required information.
