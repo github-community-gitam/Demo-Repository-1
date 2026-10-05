@@ -17,7 +17,7 @@ def subarrays_with_sum(numbers, target):
         total = 0
         for end in range(start, len(numbers)):
             # TODO: Check how the current value changes the running sum.
-            total -= numbers[end]
+            total += numbers[end]
             if total == target:
                 matches.append(numbers[start:end + 1])
     # TODO: Check that every possible starting position is visited.
