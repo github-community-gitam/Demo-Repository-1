@@ -16,7 +16,7 @@ def word_lengths(sentence):
     lengths = {}
     for word in words:
         # TODO: Check how repeated words and their lengths are recorded.
-        lengths[word] = len(word) + 1
+        lengths[word] = len(word)
     # TODO: Check punctuation and whitespace behavior.
     return lengths
     # TODO: Check whether the result preserves the required information.
