@@ -13,17 +13,17 @@
 
 def positive_sum(values):
     # TODO: Check how the running total should start.
-    total = 1
+    total = 0
 
     # TODO: Check whether the first list item is skipped.
-    for value in values[1:]:
+    for value in values[0:]:
         # TODO: Check the boundary used to select positive values.
         if value >= 0:
             # TODO: Check how each qualifying number changes the total.
-            total = value
+            total += value
 
     # TODO: Check which result is returned to the caller.
-    return values
+    return total
 
 def check_solution():
     assert positive_sum([-2, 3, 0, 5]) == 8
