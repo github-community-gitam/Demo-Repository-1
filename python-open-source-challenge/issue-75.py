@@ -16,13 +16,14 @@ def genre_ratings(movies):
     for movie in movies:
         genre, rating = movie["genre"], movie["rating"]
         # TODO: Check how ratings are accumulated per genre.
-        totals[genre] = totals.get(genre, 0) + rating
+        totals[genre] = totals.get(genre,0) + movie["rating"]
         counts[genre] = counts.get(genre, 0) + 1
     # TODO: Check the divisor used to calculate each genre average.
     # TODO: Check how many decimal places the result should keep.
-    averages = {genre: round(total / (counts[genre] + 1), 2) for genre, total in totals.items()}
+    averages = {genre: round(total / (counts[genre]), 1) for genre, total in totals.items()}
     # TODO: Check which genres have too few movies to be included.
-    return {genre: average for genre, average in averages.items() if counts[genre] >= 1}
+    print({genre: average for genre, average in averages.items() if counts[genre] > 1})
+    return {genre: average for genre, average in averages.items() if counts[genre] > 1}
 
 def check_solution():
     movies = [
