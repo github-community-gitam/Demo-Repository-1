@@ -19,7 +19,7 @@ def summarize_orders(orders):
         quantity = order["quantity"]
         price = order["price"]
         # TODO: Check how each line contributes to the bill.
-        total += price
+        total += price * quantity
         # TODO: Check how repeated item orders are combined.
         quantities[item] = quantities.get(item, 0) + quantity
     # TODO: Check how an empty order list is handled.
