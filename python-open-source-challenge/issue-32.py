@@ -16,11 +16,11 @@ def subject_extremes(students):
     for student in students:
         for subject, mark in student["marks"].items():
             # TODO: Check how both ends of the subject range are initialized.
-            bounds = subjects.setdefault(subject, [0, mark])
+            bounds = subjects.setdefault(subject, [mark, mark])
             # TODO: Check how a new high mark updates the range.
-            bounds[0] = min(bounds[0], mark)
+            bounds[0] = max(bounds[0], mark)
             # TODO: Check how a new low mark updates the range.
-            bounds[1] = max(bounds[1], mark)
+            bounds[1] = min(bounds[1], mark)
     # TODO: Check the order and meaning of each returned bound.
     return subjects
 
