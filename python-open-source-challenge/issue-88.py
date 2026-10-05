@@ -17,10 +17,10 @@ def longest_unique_run(values):
     for value in values:
         # TODO: Check how the run changes when a duplicate appears.
         if value in current:
-            current = current[current.index(value):]
+            current = current[current.index(value) + 1 :]
         current.append(value)
         # TODO: Check when a new run replaces the best one.
-        if len(current) < len(best):
+        if len(current) > len(best):
             best = current[:]
     # TODO: Check behavior when the input is empty.
     return best
