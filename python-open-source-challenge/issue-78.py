@@ -17,7 +17,7 @@ def grade_counts(marks):
         # TODO: Check the boundaries used to assign each grade.
         grade = "A" if mark >= 90 else "B" if mark >= 75 else "C" if mark >= 60 else "F"
         # TODO: Check how students sharing a grade are counted.
-        counts[grade] = counts.get(grade, 0) + 2
+        counts[grade] = counts.get(grade, 0) + 1
     # TODO: Check that grades with no students are treated consistently.
     return counts
 
