@@ -20,7 +20,7 @@ def mobile_charges(usages):
         # TODO: Check the data charge included in each record.
         cost += usage["data_gb"] * 2
         # TODO: Check how multiple records for one user are accumulated.
-        charges[user] = charges.get(user, 0) - cost
+        charges[user] = charges.get(user, 0) + cost
     # TODO: Check that users with no usage aren't fabricated.
     return charges
 
