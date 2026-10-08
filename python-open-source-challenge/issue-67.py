@@ -15,18 +15,29 @@ def steadily_improving(students):
     improving = []
     for student in students:
         marks = student["tests"]
-        # TODO: Check how each pair of successive test marks is compared.
-        if all(marks[index] > marks[index + 1] for index in range(len(marks) - 1)):
+
+        # Check that each test mark is greater than the previous test
+        if len(marks) >= 2 and all(
+            marks[index] < marks[index + 1]
+            for index in range(len(marks) - 1)
+        ):
             improving.append(student["name"])
-    # TODO: Check how students with too few tests are handled.
+
     return improving
 
+
 def check_solution():
-    students = [{"name":"A","tests":[50,60,75]},{"name":"B","tests":[70,65,80]},{"name":"C","tests":[90]}]
+    students = [
+        {"name": "A", "tests": [50, 60, 75]},
+        {"name": "B", "tests": [70, 65, 80]},
+        {"name": "C", "tests": [90]}
+    ]
+
     assert steadily_improving(students) == ["A"]
     assert steadily_improving([]) == []
 
     print("All checks passed!")
+
 
 if __name__ == "__main__":
     check_solution()
