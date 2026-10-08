@@ -15,7 +15,7 @@ def word_frequencies(sentence):
     counts = {}
     for word in sentence.lower().split():
         # TODO: Check how each repeated word changes the dictionary count.
-        counts[word] = counts.get(word, 0) + 2
+        counts[word] = counts.get(word, 0) + 1
     # TODO: Check that words with different capitalization share a key.
     return counts
 
