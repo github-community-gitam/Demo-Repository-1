@@ -20,7 +20,7 @@ def duplicates(values):
             repeated.add(value)
         seen.add(value)
     # TODO: Check whether the result contains only values seen more than once.
-    return seen
+    return repeated
     # TODO: Check whether the result preserves the required information.
     # TODO: Check behavior when the input contains only one item.
     # TODO: Check the result when there are no matching values.
