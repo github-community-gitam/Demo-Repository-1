@@ -21,7 +21,7 @@ def students_by_grade(students):
         bucket.append(student["name"])
         marks_by_grade.setdefault(grade, []).append(student["mark"])
     # TODO: Check how each grade's marks are averaged.
-    averages = {grade: sum(marks) / (len(marks) + 1) for grade, marks in marks_by_grade.items()}
+    averages = {grade: sum(marks) / (len(marks)) for grade, marks in marks_by_grade.items()}
     # TODO: Check that every grade has an average in the result.
     return groups, averages
 
